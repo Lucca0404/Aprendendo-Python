@@ -1,0 +1,37 @@
+import os
+os.system('cls')
+print('Bem-vindo a sua lista de supermercado *_*\n')
+lista_de_compras = []
+while True:
+    print('Escolha uma das opções abaixo:')
+    print('Digite "i" para inserir um item na sua lista')
+    print('Digite "r" para retirar um item na sua lista')
+    print('Digite "v" para ver a sua lista completa')
+    print('Digite "s" para finalizar a lista e sair')
+    entrada = input().lower()
+
+    if entrada == 'i':
+        mercadoria = input('Que mercadoria você gostaria de adicionar na sua lista?\n')
+        lista_de_compras.append(mercadoria)
+        print(f'\n{mercadoria} foi adicionada ao carrinho com sucesso\n')
+    elif entrada == 'v':
+        for item in enumerate(lista_de_compras):
+            indice, mercadoria = item
+            print(indice+1, mercadoria)
+    elif entrada == 'r':
+        if lista_de_compras:
+            retirar = input('Digite o número correspondente à mercadoria que você quer retirar\n')
+            try:
+                int_retirar = int(retirar)
+                print(f'{lista_de_compras[int_retirar-1]} removido(a) com sucesso\n')
+                del(lista_de_compras[int_retirar-1])
+                
+            except:
+                print('\n***Erro-123: Por favor, Digite o número correspondente à mercadoria da próxima vez\n')
+        else:
+            print('Não existe nenhum item na lista ainda\n')
+    elif entrada == 's':
+        print('\nFoi um prazer fazer sua lista, volte sempre ;)')
+        break
+    else:
+        print('\n***Erro-202: Por favor, digite um comando válido\n')
