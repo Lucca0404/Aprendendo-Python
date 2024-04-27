@@ -1,0 +1,47 @@
+import os
+os.system('cls')
+
+contador = 10
+soma = 0
+erro = 'você não digitou um CPF válido'
+
+CPF = input('Qual seu CPF?\n')
+CPF = CPF.replace('.','').replace('-','')
+Numeros_iguais = CPF[0] * len(CPF)
+
+try:
+    if CPF != Numeros_iguais:
+        if len(CPF) == 11:
+            
+            #Primeiro Digito:
+            for numeros in CPF[:9]:
+                int_numeros = int(numeros)
+                soma += int_numeros * contador
+                contador -= 1
+                
+            resultado = (soma * 10) % 11
+            digito_um = resultado if resultado <= 9 else 0
+
+            #Segundo Digito:
+            contador = 11
+            soma = 0
+            for numeros in CPF[:10]:
+                int_numeros = int(numeros)
+                soma += int_numeros * contador
+                contador -= 1
+                
+            resultado = (soma * 10) % 11
+            digito_dois = resultado if resultado <= 9 else 0
+
+            CPF_novo = CPF[:9] + str(digito_um) + str(digito_dois)
+
+            if CPF == CPF_novo:
+                print('CPF é válido')
+            else:
+                print(erro)
+        else:
+            print(erro)
+    else:
+        print(erro)
+except:
+    print(erro)
