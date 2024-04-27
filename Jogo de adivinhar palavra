@@ -1,0 +1,46 @@
+
+palavra_secreta = 'Girroto'.lower()
+palavra_descoberta = len(palavra_secreta) * '*'
+aux = ''
+tentativas = 0
+print('Bem-vindo ao jogo de adivinhar a palavra')
+print('Regras')
+print('1- Existe uma palavra secreta escolhida pelo dono do código e sua missão é chutar  letras aos poucos até conseguir adivinhar a palavra')
+print('2- Digite apenas um caracter por vez\n\n')
+#Código de adivinhar uma palavra secreta
+while '*' in palavra_descoberta:
+    tentativa = input('Digite apenas uma letra\n').lower()
+    tentativas+=1
+    if len(tentativa) != 1 or tentativa.isdigit():
+        print('Você quebrou a regra número dois, tente novamente')
+        continue
+    else:
+        if tentativa in palavra_secreta:
+            if tentativa in palavra_descoberta:
+                print('Caracter repetido, tente outro\n')
+                continue
+            else:
+                aux = ''
+                for letra in palavra_secreta:
+                    
+                    if tentativa == letra:
+                        
+                        aux += tentativa
+                    else:
+                        
+                        aux += '*'
+                print('')
+                if palavra_descoberta == len(palavra_secreta) * '*':
+                    palavra_descoberta = aux
+                else:
+                    for i in range(0,len(palavra_secreta)):
+                        
+                        if palavra_descoberta[i] == '*' and aux[i] != '*':
+                            letra = aux[i]
+                            palavra_descoberta = palavra_descoberta[:i] + letra + palavra_descoberta[i+1:]
+            print(palavra_descoberta)          
+        else:
+            print('essa letra não faz parte da palavra')
+            print(palavra_descoberta)
+print('Parabéns você descobriu a palavra secreta!!')
+print(f'você teve {tentativas} tentativas')
