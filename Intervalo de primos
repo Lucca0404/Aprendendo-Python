@@ -1,0 +1,26 @@
+import os
+os.system('cls')
+
+print('Bem-vindo ao código que mostra todos os números primos dentro de um intervalo\n\n')
+
+inicio_intervalo = input('Digite o número do inicio do intervalo\n')
+final_intervalo = input('Digite o número do final do intervalo\n')
+dividiu = 0
+lista_de_primos = []
+
+try:
+    int_inicio_intervalo = int(inicio_intervalo)
+    int_final_intervalo = int(final_intervalo)
+
+    for numeros in range(int_inicio_intervalo,int_final_intervalo+1):
+        dividiu = 0
+        for divisores in range(1,numeros):
+            if numeros % divisores == 0:
+                dividiu += 1
+        if dividiu == 1:
+            lista_de_primos.append(numeros)
+except:
+    print('Digite apenas números inteiros por favor')
+
+for numeros_primos in lista_de_primos:
+    print(numeros_primos, end=' ')
