@@ -1,0 +1,26 @@
+import os
+os.system('cls')
+
+def fibonnaci(termos):
+    
+    termo_atual = 1
+    termo_ant = 1
+    termo_ant_do_ant = 1
+
+    for i in range(termos):
+        if i == 1:
+            print(1)
+        else:
+            print(termo_atual)
+
+            termo_ant_do_ant = termo_ant
+            termo_ant = termo_atual
+            termo_atual = termo_ant + termo_ant_do_ant
+
+entrada = input('Quantos termos da sequência de fibonnaci você gostaria de ver?\n')
+
+try:
+    int_entrada = int(entrada)
+    fibonnaci(int_entrada)
+except:
+    print('Digite um número inteiro')
