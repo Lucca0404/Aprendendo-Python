@@ -1,0 +1,22 @@
+import os
+os.system('cls')
+print('Bem-vindo ao calculador de divisores')
+while True:
+    numero = input('\n\nDigite um numero e veja seus divisores ;)\nOu digite -999 e finalize o código\n')
+    try:
+        int_numero = int(numero)
+        
+        if int_numero != -999:
+            if int_numero < 0:
+                int_numero *= -1
+            print(f'os divisores de {numero} são')
+            for i in range(int_numero):
+                i+=1
+                if int_numero % i == 0:
+                    print(i, end=' ')
+                    print(-i, end=' ')
+        else:
+            print('Volte sempre :)')
+            break
+    except:
+        print('Digite um número inteiro por favor')
