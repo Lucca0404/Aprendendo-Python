@@ -1,0 +1,271 @@
+import os
+import random
+os.system('cls')
+
+def exibirMesaSecreta():
+    print(*mesaSecreta, sep=' ')
+    return True
+
+def exibirMesaEscondida():
+    print(*mesaEscondida, sep=' ')
+    return True
+
+def exibirMesaDescoberta():
+    print(*mesaDescoberta, sep=' ')
+    return True
+
+def exibirPrimeiraPeça(peça):
+    if peça == '1':
+        mesaDescoberta[0] = mesaEscondida[0]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '2':
+        mesaDescoberta[1] = mesaEscondida[1]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '2':
+        mesaDescoberta[1] = mesaEscondida[1]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '2':
+        mesaDescoberta[1] = mesaEscondida[1]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '3':
+        mesaDescoberta[2] = mesaEscondida[2]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '4':
+        mesaDescoberta[3] = mesaEscondida[3]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '5':
+        mesaDescoberta[4] = mesaEscondida[4]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '6':
+        mesaDescoberta[5] = mesaEscondida[5]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '7':
+        mesaDescoberta[6] = mesaEscondida[6]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '8':
+        mesaDescoberta[7] = mesaEscondida[7]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '9':
+        mesaDescoberta[8] = mesaEscondida[8]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '10':
+        mesaDescoberta[9] = mesaEscondida[9]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '11':
+        mesaDescoberta[10] = mesaEscondida[10]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '12':
+        mesaDescoberta[11] = mesaEscondida[11]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '13':
+        mesaDescoberta[12] = mesaEscondida[12]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '14':
+        mesaDescoberta[13] = mesaEscondida[13]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '15':
+        mesaDescoberta[14] = mesaEscondida[14]
+        exibirMesaDescoberta()
+        return True
+    elif peça == '16':
+        mesaDescoberta[15] = mesaEscondida[15]
+        exibirMesaDescoberta()
+        return True
+    return False
+    
+def exibirSegundaPeça(peça1,peça2):
+    if peça2 == '1':
+        mesaDescoberta[0] = mesaEscondida[0]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '2':
+        mesaDescoberta[1] = mesaEscondida[1]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '2':
+        mesaDescoberta[1] = mesaEscondida[1]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '2':
+        mesaDescoberta[1] = mesaEscondida[1]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '3':
+        mesaDescoberta[2] = mesaEscondida[2]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '4':
+        mesaDescoberta[3] = mesaEscondida[3]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '5':
+        mesaDescoberta[4] = mesaEscondida[4]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '6':
+        mesaDescoberta[5] = mesaEscondida[5]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '7':
+        mesaDescoberta[6] = mesaEscondida[6]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '8':
+        mesaDescoberta[7] = mesaEscondida[7]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '9':
+        mesaDescoberta[8] = mesaEscondida[8]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '10':
+        mesaDescoberta[9] = mesaEscondida[9]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '11':
+        mesaDescoberta[10] = mesaEscondida[10]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '12':
+        mesaDescoberta[11] = mesaEscondida[11]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '13':
+        mesaDescoberta[12] = mesaEscondida[12]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '14':
+        mesaDescoberta[13] = mesaEscondida[13]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '15':
+        mesaDescoberta[14] = mesaEscondida[14]
+        exibirMesaDescoberta()
+        return True
+    elif peça2 == '16':
+        mesaDescoberta[15] = mesaEscondida[15]
+        exibirMesaDescoberta()
+        return True
+    return False
+
+def parFeito(peça1,peça2):
+    int_peça1 = int(peça1)
+    int_peça2 = int(peça2)
+    if mesaDescoberta[int_peça1-1] == mesaDescoberta[int_peça2 -1]:
+        return True
+    return False
+
+peças = [
+    " [#] " , " [@] " ," [&] " ," [+] " ," [-] " ," [!] " ," [%] " ," [$] "
+]
+
+listaAuxiliar = []
+
+mesaSecreta = [
+    ' [?] '
+    for j in range(4)
+    for i in range(4)
+]
+
+mesaEscondida = []
+
+for i in range(4):
+    for j in range(4):
+        peçaAtual = random.choice(peças)
+        mesaEscondida.append(peçaAtual)
+        
+        if peçaAtual not in listaAuxiliar:
+            listaAuxiliar.append(peçaAtual)
+        else: 
+            peças.remove(peçaAtual)
+
+mesaDescoberta = mesaSecreta.copy()
+mesaDescobertaCopia = mesaDescoberta.copy()
+
+Vidas = 5
+
+cartasViradas = []
+
+while True:
+    print('Bem vindo ao jogo da memória *_*')
+    print('Para jogar digite 1')
+    entradaJogo = input('para sair digite qualquer outra coisa\n')
+
+    while entradaJogo == '1':
+        print('Regras:')
+        print('O tabuleiro será formado por 4 linhas e 4 colunas, para escolher a peça que você quer virar você deve digitar um número de 1-16')
+        print('Após isso escolha outra peça para virar, se as duas peças forem iguais elas ficaram viradas até que o jogo acabe')
+        print('Caso as peças sejam diferentes, elas volataram a se esconder e você perderá uma vida(você tem 5 vidas no total)')
+        print('O jogo acaba quando todas as peças forem viradas ou quando você perder todas as suas vidas')
+        
+        entradaStart = input('Vamos começar? ^o^ (Digite "sim" para começar)\n')
+        if entradaStart == 'sim':
+            print("Incrível, vamos lá")
+        else:
+            
+            entradaStart = input('Opa, acho que você escreveu errado, tem certeza que você não quer jogar? o_o (Digite "sim" para continuar o jogo)\n').lower
+            if entradaStart == 'sim':
+                print('Incrivel, vamos lá')
+            else:
+                print('Sua opinião não importa aqui, vamos começar o jogo')
+        while True:
+            exibirMesaDescoberta()
+
+            primeiraPeça = input('Escolha a primeira peça que você quer virar (1-16)\n')
+            if primeiraPeça in cartasViradas:
+                print('Essa cartas já foi virada 0_0')
+                continue
+            else:
+                if exibirPrimeiraPeça(primeiraPeça):
+
+                    segundaPeça = input('Ótimo, agora escolha a segunda peça que você quer virar(1-16\n')
+                    if segundaPeça in cartasViradas:
+                        print('Essa carta já foi virada 0_0')
+                    else:
+                        if primeiraPeça != segundaPeça:
+                            
+                            if exibirSegundaPeça(primeiraPeça,segundaPeça):
+                                if parFeito(primeiraPeça,segundaPeça):
+                                    if mesaDescoberta != mesaEscondida:
+                                        print('Parabéns você encontrou um Par, continue nesse caminho')
+                                        mesaDescobertaCopia = mesaDescoberta.copy()
+                                        cartasViradas.append(primeiraPeça)
+                                        cartasViradas.append(segundaPeça)
+                                    else:
+                                        print('Parabéns você ganhou o jogo!!!!!')
+                                        break
+                                else:
+                                    print('Você não formou um par, tenta denovo')
+                                    Vidas -=1
+                                    if Vidas == 0:
+                                        print('Você perdeu, suas vidas acabaram')
+                                        break
+                                    else:
+                                        print(f'Você só tem mais {Vidas} vidas')
+                                        mesaDescoberta = mesaDescobertaCopia.copy()
+                            else:
+                                print('É pra digitar um número entre 1-16 humano burro >_<')
+
+                        else:
+                            print('Por que você virou a mesma peça denovo? |0_0|')
+                else:
+                    print('É pra digitar um número entre 1-16 humano burro >_<')
+        break
+    break
+print('Volte Sempre *_*')
