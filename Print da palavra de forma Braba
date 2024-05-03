@@ -1,0 +1,28 @@
+import random
+import time 
+import os
+
+os.system('cls')
+
+i = 0
+letras = 'abcdefghijklmnopqrstuvwxyz -_#!?()&ABCDEFGHIJKLMNOPQRSTUVWXYZçã'
+
+palavra = input('Digite uma palavra para ela ser escrita de maneira diferenciada\n')
+
+palavra_formada = ''
+palavra_auxiliar = ''
+
+while i < len(palavra):
+
+    letra_sorteada = random.choice(letras)
+    palavra_formada += letra_sorteada
+    time.sleep(0.02)
+    print(palavra_formada)
+    
+    if letra_sorteada == palavra[i]:
+        palavra_auxiliar += letra_sorteada
+        i += 1
+        
+    else:
+        palavra_formada = palavra_auxiliar
+        continue
