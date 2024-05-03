@@ -251,12 +251,13 @@ while True:
                                         print('Parabéns você ganhou o jogo!!!!!')
                                         break
                                 else:
-                                    print('Você não formou um par, tenta denovo')
+                                    
                                     Vidas -=1
                                     if Vidas == 0:
                                         print('Você perdeu, suas vidas acabaram')
                                         break
                                     else:
+                                        print('Você não formou um par, tenta denovo')
                                         print(f'Você só tem mais {Vidas} vidas')
                                         mesaDescoberta = mesaDescobertaCopia.copy()
                             else:
