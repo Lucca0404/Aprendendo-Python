@@ -211,7 +211,7 @@ while True:
         print('Regras:')
         print('O tabuleiro será formado por 4 linhas e 4 colunas, para escolher a peça que você quer virar você deve digitar um número de 1-16')
         print('Após isso escolha outra peça para virar, se as duas peças forem iguais elas ficaram viradas até que o jogo acabe')
-        print('Caso as peças sejam diferentes, elas volataram a se esconder e você perderá uma vida(você tem 5 vidas no total)')
+        print('Caso as peças sejam diferentes, elas voltaram a se esconder e você perderá uma vida(você tem 5 vidas no total)')
         print('O jogo acaba quando todas as peças forem viradas ou quando você perder todas as suas vidas')
         
         entradaStart = input('Vamos começar? ^o^ (Digite "sim" para começar)\n')
