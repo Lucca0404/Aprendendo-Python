@@ -1,5 +1,7 @@
 import os
 import random
+import time
+
 os.system('cls')
 
 def exibirMesaSecreta():
@@ -210,6 +212,7 @@ while True:
     while entradaJogo == '1':
         print('Regras:')
         print('O tabuleiro será formado por 4 linhas e 4 colunas, para escolher a peça que você quer virar você deve digitar um número de 1-16')
+        print('Antes do jogo começar você terá 10 segundos para memoriazar a localização de cada peça no jogo')
         print('Após isso escolha outra peça para virar, se as duas peças forem iguais elas ficaram viradas até que o jogo acabe')
         print('Caso as peças sejam diferentes, elas voltaram a se esconder e você perderá uma vida(você tem 5 vidas no total)')
         print('O jogo acaba quando todas as peças forem viradas ou quando você perder todas as suas vidas')
@@ -224,7 +227,13 @@ while True:
                 print('Incrivel, vamos lá')
             else:
                 print('Sua opinião não importa aqui, vamos começar o jogo')
+
+        exibirMesaEscondida()
+        time.sleep(10)
+        os.system('cls')
+
         while True:
+            
             exibirMesaDescoberta()
 
             primeiraPeça = input('Escolha a primeira peça que você quer virar (1-16)\n')
@@ -237,12 +246,14 @@ while True:
                     segundaPeça = input('Ótimo, agora escolha a segunda peça que você quer virar(1-16\n')
                     if segundaPeça in cartasViradas:
                         print('Essa carta já foi virada 0_0')
+                        continue
                     else:
                         if primeiraPeça != segundaPeça:
                             
                             if exibirSegundaPeça(primeiraPeça,segundaPeça):
                                 if parFeito(primeiraPeça,segundaPeça):
                                     if mesaDescoberta != mesaEscondida:
+                                        os.system('cls')
                                         print('Parabéns você encontrou um Par, continue nesse caminho')
                                         mesaDescobertaCopia = mesaDescoberta.copy()
                                         cartasViradas.append(primeiraPeça)
@@ -257,9 +268,12 @@ while True:
                                         print('Você perdeu, suas vidas acabaram')
                                         break
                                     else:
+                                        time.sleep(3)
+                                        os.system('cls')
                                         print('Você não formou um par, tenta denovo')
                                         print(f'Você só tem mais {Vidas} vidas')
                                         mesaDescoberta = mesaDescobertaCopia.copy()
+                                        
                             else:
                                 print('É pra digitar um número entre 1-16 humano burro >_<')
 
@@ -269,4 +283,4 @@ while True:
                     print('É pra digitar um número entre 1-16 humano burro >_<')
         break
     break
-print('Volte Sempre *_*')
+print('Volte Sempre *_*')   
