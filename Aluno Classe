@@ -1,0 +1,42 @@
+class Aluno():
+    def __init__(self) -> None:
+        self._nome = None
+        self._notas = [0,0,0]
+
+    def __repr__(self) -> str:
+        return f'Nome: {self._nome}\n' \
+               f'Nota 1: {self._notas[0]}\n'\
+               f'Nota 2: {self._notas[1]}\n'\
+               f'Nota 3: {self._notas[2]}\n'
+    
+    @property
+    def nome(self):
+        return self._nome
+    @nome.setter
+    def nome(self,nome : str):
+        self._nome = nome
+
+    def receber_notas(self,nota1,nota2,nota3):
+        self._notas[0] = nota1
+        self._notas[1] = nota2
+        self._notas[2] = nota3
+
+    def substituir_nota(self,num_da_nota,nova_nota):
+        self._notas[num_da_nota-1] = nova_nota
+
+    def maior_nota(self):
+        novas_notas = self._notas.copy()
+        novas_notas.sort()
+        return novas_notas[-1]
+    
+    def media(self):
+        soma = 0
+        for notas in self._notas:
+            soma += notas
+        return round(soma/3,2)
+
+Lucca = Aluno()
+Lucca.nome = 'Lucca Nobre'
+Lucca.receber_notas(1,2,3)
+Lucca.substituir_nota(2,10)
+print(Lucca.media(),Lucca.maior_nota(),Lucca,sep='\n')
