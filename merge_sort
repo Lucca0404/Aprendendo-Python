@@ -1,0 +1,39 @@
+from numpy import array
+def merge_sort(lista):
+    vetor = [i for i in range(len(lista))]
+    array(vetor)
+    merge_h(lista,vetor,0,len(lista)-1)
+
+def merge_h(lista,array,inicio,final):
+    if inicio < final:
+        meio = (inicio+final)//2
+        merge_h(lista,array,inicio,meio)
+        merge_h(lista,array,meio+1,final)
+        merge(lista,array,inicio,meio,final)
+
+def merge(lista,array,inicio,meio,final):
+    i1 = inicio
+    i2 = meio+1
+    for i in range(inicio,final+1):
+        if i1 > meio:
+            array[i] = lista[i2]
+            i2+=1
+        elif i2 > final:
+            array[i] = lista[i1]
+            i1+=1
+        elif lista[i1] < lista[i2]:
+            array[i] = lista[i1]
+            i1+=1
+        else:
+            array[i] = lista[i2]
+            i2+=1
+    for i in range(inicio,final+1):
+        lista[i] = array[i]
+
+def main():
+    lista = [10,9,8,7,6,5,4,3,2,1]
+    merge_sort(lista)
+    print(lista)
+
+if __name__=='__main__':
+    main()
