@@ -1,0 +1,21 @@
+def insert_sort(list):
+    i = 1
+    while i < len(list):
+        item = list[i]
+        j = i-1
+        while j >= 0:
+            if item < list[j]:
+                list[j+1] = list[j]
+                j-=1
+            else:
+                break
+        list[j+1] = item
+        i+=1
+
+def main():
+    lista = [10,9,8,7,6,5,4,3,2,1]
+    insert_sort(lista)
+    print(lista)
+
+if __name__=='__main__':
+    main()
