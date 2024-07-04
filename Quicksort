@@ -1,0 +1,29 @@
+def quicksort(lista):
+    quicksort_h(lista,0,len(lista)-1)
+
+def quicksort_h(lista,inicio,final):
+    if inicio < final:
+        limite = partir(lista,inicio,final)
+        quicksort_h(lista,inicio,limite-1)
+        quicksort_h(lista,limite+1,final)
+
+def partir(lista,inicio,final):
+    meio = (inicio+final)//2
+    item = lista[meio]
+    lista[meio] = lista[final]
+    lista[final] = item
+    limite = inicio
+    for i in range(inicio,final):
+        if lista[i] < item:
+            lista[i],lista[limite] = lista[limite],lista[i]
+            limite+=1
+    lista[final],lista[limite] = lista[limite],lista[final]
+    return limite
+
+def main():
+    lista = [9,8,7,6,5,4,3,2,1]
+    quicksort(lista)
+    print(lista)
+
+if __name__=='__main__':
+    main()
